@@ -20,5 +20,13 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\EventListener\CustomerListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+
+    App\Security\Voter\CustomerVoter:
+        tags:
+            - { name: security.voter }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

@@ -38,26 +38,22 @@ cp .env.dist .env
 
 Assurez-vous de remplir les valeurs appropriées pour votre configuration. Des expliquations sont fournit dans le fichier `.env`
 
-### 4. Configurez votre fichier .env pour y 
 
-```bash
-cp .env.dist .env
-```
 
-### 5. Adaptez le fichier .env
+### 4. Adaptez le fichier .env
 
 Ouvrez le fichier .env et modifiez les lignes :
 `DATABASE_URL` avec vos informations de connexion à la base de données 
 mettez en place une clé secret pour APP_SECRET et JWT_PASSPHRASE.
 
 
-### 6. Générer les clés privée et publique pour l'authentification par JWT
+### 5. Générer les clés privée et publique pour l'authentification par JWT
 
 ```bash
 php bin/console lexik:jwt:generate-keypair
 ```
 
-### 7. Créez la base de données
+### 6. Créez la base de données
 
 ```bash
 php bin/console doctrine:database:create
@@ -69,19 +65,19 @@ Exécutez les migrations pour créer les tables dans votre base de données
 php bin/console doctrine:migrations:migrate
 ```
 
-### 8. Générer le jeu de données dans votre base de données.
+### 7. Générer le jeu de données dans votre base de données.
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
 
-### 9. Ajouter un utilisateur
+### 8. Ajouter un utilisateur
 
 ```bash
 php bin/console bilemo:create-user
 ```
 
-### 10. Lancez le serveur Symfony
+### 9. Lancez le serveur Symfony
 ```bash
 symfony server:start
 ```
